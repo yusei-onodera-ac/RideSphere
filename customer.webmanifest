@@ -1,0 +1,14 @@
+{
+  "name": "RideSphere 顧客アプリ",
+  "short_name": "RS Customer",
+  "description": "顧客専用の予約依頼、予約状況確認、緊急通知PWAです。",
+  "start_url": "./customer.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#eef7f6",
+  "theme_color": "#0f766e",
+  "orientation": "portrait-primary",
+  "icons": [
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "RideSphere 地図付き配車管理PWA",
+  "short_name": "RideSphere",
+  "description": "予約登録、現在地共有、空き運転手検索、配車承認までを扱うMVP PWAです。",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#eef7f6",
+  "theme_color": "#0f766e",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

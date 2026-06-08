@@ -1,0 +1,14 @@
+{
+  "name": "RideSphere ドライバーアプリ",
+  "short_name": "RS Driver",
+  "description": "ドライバー専用の現在地共有、配車承認、運行完了PWAです。",
+  "start_url": "./driver.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#eef7f6",
+  "theme_color": "#0f766e",
+  "orientation": "portrait-primary",
+  "icons": [
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
