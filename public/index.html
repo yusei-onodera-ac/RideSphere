@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#2563eb" />
+    <title>RideSphere | 地図付き配車管理PWA</title>
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" href="/icons/icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">RideSphere MVP</p>
+        <h1>地図付き配車管理PWA</h1>
+      </div>
+      <div class="status-stack" aria-label="PWA状態">
+        <span id="networkStatus" class="pill">オンライン確認中</span>
+        <button id="installButton" class="ghost-button" type="button" hidden>ホーム画面に追加</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="panel admin-panel" aria-labelledby="admin-title">
+        <div class="section-heading">
+          <p class="eyebrow">管理者側</p>
+          <h2 id="admin-title">予約登録・空き運転手検索・配車</h2>
+        </div>
+
+        <form id="reservationForm" class="reservation-form">
+          <label>
+            顧客名
+            <input id="customerName" name="customerName" value="佐藤 花子" required />
+          </label>
+          <label>
+            乗車場所
+            <input id="pickup" name="pickup" value="東京駅 丸の内口" required />
+          </label>
+          <label>
+            目的地
+            <input id="destination" name="destination" value="羽田空港 第2ターミナル" required />
+          </label>
+          <label>
+            希望時刻
+            <input id="pickupTime" name="pickupTime" type="time" value="14:30" required />
+          </label>
+          <button type="submit">予約を登録して候補検索</button>
+        </form>
+
+        <div class="map-card" aria-label="管理者用の現在地マップ">
+          <div class="map-toolbar">
+            <strong>現在地マップ</strong>
+            <span>空き運転手・車両・乗車場所・ルート</span>
+          </div>
+          <div id="dispatchMap" class="mock-map">
+            <div class="route-line" aria-hidden="true"></div>
+            <div class="map-pin pickup" style="--x: 42%; --y: 53%">乗</div>
+            <div class="map-pin destination" style="--x: 76%; --y: 27%">降</div>
+          </div>
+        </div>
+
+        <div class="section-heading compact">
+          <h3>周辺の空き運転手</h3>
+          <span id="rankingSummary" class="muted"></span>
+        </div>
+        <div id="driverList" class="driver-list"></div>
+      </section>
+
+      <section class="panel driver-panel" aria-labelledby="driver-title">
+        <div class="section-heading">
+          <p class="eyebrow">運転手PWA</p>
+          <h2 id="driver-title">現在地共有・通知承認・運行完了</h2>
+        </div>
+
+        <div class="driver-login">
+          <label>
+            ログイン中の運転手
+            <select id="driverSelect"></select>
+          </label>
+          <button id="shareLocationButton" type="button">現在地を共有</button>
+        </div>
+
+        <article class="job-card" id="jobCard">
+          <p class="eyebrow">配車通知</p>
+          <h3 id="jobTitle">通知待ち</h3>
+          <dl>
+            <div><dt>乗車場所</dt><dd id="jobPickup">-</dd></div>
+            <div><dt>目的地</dt><dd id="jobDestination">-</dd></div>
+            <div><dt>到着予定</dt><dd id="jobEta">-</dd></div>
+            <div><dt>状態</dt><dd id="jobStatus">未割当</dd></div>
+          </dl>
+          <div class="job-actions">
+            <button id="acceptButton" type="button" disabled>承認する</button>
+            <button id="completeButton" type="button" disabled>運行完了</button>
+          </div>
+        </article>
+
+        <div class="info-grid">
+          <article>
+            <h3>ナビ・交通情報</h3>
+            <p id="navigationInfo">乗車場所までのルートを準備中です。渋滞・通行止め情報は今後API連携します。</p>
+          </article>
+          <article>
+            <h3>緊急ボタン</h3>
+            <button id="emergencyButton" class="danger-button" type="button">管理者へ緊急通知</button>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <section class="panel roadmap" aria-labelledby="roadmap-title">
+      <p class="eyebrow">優先度</p>
+      <h2 id="roadmap-title">MVP後の拡張予定</h2>
+      <div class="roadmap-grid">
+        <article><h3>次に作る</h3><p>自動采配、カレンダー、タスク管理、メッセージ、緊急ボタン強化、車両故障管理。</p></article>
+        <article><h3>後回し</h3><p>給与計算、道路交通情報通知、Q&amp;A、PDF出力、請求書管理。</p></article>
+      </div>
+    </section>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="/src/app.js"></script>
+  </body>
+</html>
