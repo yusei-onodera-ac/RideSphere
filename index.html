@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0f766e" />
+    <meta name="description" content="RideSphere PWA アプリ入口" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>RideSphere | アプリ選択</title>
+  </head>
+  <body>
+    <header class="app-header hero-header">
+      <div>
+        <p class="eyebrow">RideSphere</p>
+        <h1>役割ごとに完全分離したPWA</h1>
+        <p class="lead">管理者・ドライバー・顧客は同じ画面の切替ではなく、それぞれ別アプリ入口から利用します。</p>
+      </div>
+    </header>
+
+    <main class="portal-layout">
+      <a class="portal-card admin-card" href="admin.html">
+        <p class="eyebrow">Admin app</p>
+        <h2>管理者アプリ</h2>
+        <p>予約登録、地図での空きドライバー確認、配車通知、履歴確認を行います。</p>
+      </a>
+      <a class="portal-card driver-card" href="driver.html">
+        <p class="eyebrow">Driver app</p>
+        <h2>ドライバーアプリ</h2>
+        <p>現在地共有、配車依頼の確認、承認、運行完了、緊急通知を行います。</p>
+      </a>
+      <a class="portal-card customer-card" href="customer.html">
+        <p class="eyebrow">Customer app</p>
+        <h2>顧客アプリ</h2>
+        <p>予約依頼、予約状況確認、現在地共有、緊急通知を行います。</p>
+      </a>
+    </main>
+  </body>
+</html>

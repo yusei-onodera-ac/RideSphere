@@ -1,0 +1,11 @@
+{
+  "name": "ridesphere",
+  "version": "0.1.0",
+  "private": true,
+  "description": "RideSphere MVP: map-based dispatch management PWA prototype.",
+  "type": "module",
+  "scripts": {
+    "start": "python3 -m http.server 4173",
+    "check": "node --check shared.js && node --check admin.js && node --check driver.js && node --check customer.js && node --check service-worker.js"
+  }
+}

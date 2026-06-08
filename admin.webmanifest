@@ -1,0 +1,14 @@
+{
+  "name": "RideSphere 管理者アプリ",
+  "short_name": "RS Admin",
+  "description": "管理者専用の予約登録、地図監視、配車割当PWAです。",
+  "start_url": "./admin.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#eef7f6",
+  "theme_color": "#0f766e",
+  "orientation": "portrait-primary",
+  "icons": [
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0f766e" />
+    <meta name="description" content="RideSphere ドライバーアプリ" />
+    <link rel="manifest" href="driver.webmanifest" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>RideSphere | ドライバーアプリ</title>
+  </head>
+  <body>
+    <header class="app-header driver-top">
+      <div>
+        <p class="eyebrow">Driver app</p>
+        <h1>ドライバーアプリ</h1>
+      </div>
+      <div class="header-actions">
+        <a class="nav-link" href="index.html">アプリ選択</a>
+        <button id="notifyButton" class="ghost">通知を有効化</button>
+      </div>
+    </header>
+
+    <main class="layout driver-layout">
+      <section class="panel" aria-labelledby="loginTitle">
+        <div class="section-heading row">
+          <div><p class="eyebrow">Driver login</p><h2 id="loginTitle">ドライバー選択</h2></div>
+          <span id="driverStatusBadge" class="badge">空き</span>
+        </div>
+        <label class="field"><span>ログイン中のドライバー</span><select id="driverSelect"></select></label>
+        <p class="hint">ドライバー専用アプリです。管理者機能・顧客予約機能は表示しません。</p>
+      </section>
+
+      <section class="panel map-panel" aria-labelledby="mapTitle">
+        <div class="section-heading row">
+          <div><p class="eyebrow">Navigation</p><h2 id="mapTitle">乗車場所・降車場所</h2></div>
+          <button id="shareLocationButton" class="primary">現在地共有</button>
+        </div>
+        <div class="map-shell">
+          <div id="mapCanvas" class="map-canvas" role="img" aria-label="ドライバー用配車地図"></div>
+          <aside class="map-legend" aria-label="地図凡例">
+            <span><i class="dot driver"></i>自車</span>
+            <span><i class="dot pickup"></i>乗車場所</span>
+            <span><i class="dot destination"></i>目的地</span>
+          </aside>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="assignmentTitle">
+        <div class="section-heading"><p class="eyebrow">Assignment</p><h2 id="assignmentTitle">配車依頼</h2></div>
+        <div id="driverAssignment" class="driver-assignment"></div>
+        <div class="driver-actions">
+          <button id="acceptDispatchButton" class="primary">配車を承認</button>
+          <button id="completeRideButton" class="success">運行完了</button>
+          <button id="emergencyButton" class="danger">緊急通知</button>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="notificationsTitle">
+        <div class="section-heading"><p class="eyebrow">Driver log</p><h2 id="notificationsTitle">通知・履歴</h2></div>
+        <ol id="eventLog" class="event-log" aria-live="polite"></ol>
+      </section>
+    </main>
+    <script src="driver.js" type="module"></script>
+  </body>
+</html>
