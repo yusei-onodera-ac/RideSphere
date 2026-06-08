@@ -1,0 +1,19 @@
+{
+  "name": "RideSphere Dispatch PWA",
+  "short_name": "RideSphere",
+  "description": "地図付き配車管理PWAのMVP。管理者の配車管理と運転手の承認フローを提供します。",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
